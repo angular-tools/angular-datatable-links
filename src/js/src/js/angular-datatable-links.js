@@ -12,12 +12,10 @@
                 controller: function ($scope, $element, $session) {
                     $scope.rowClick = function () {
                         if (!$(event.target).closest('td.unclickable').length) {
-                            top.location.href = /^\//.test($scope.ngTrLink) ? $scope.ngTrLink : $session.request.uri + '/' + $scope.ngTrLink;
+                            top.location.href = /^\//.test($scope.ngTrLink) ? $scope.ngTrLink : $session.request.uri.replace(/\/$/, '') + '/' + $scope.ngTrLink;
                         }
                     };
                 }
             };
         }]);
 })();
-
-
