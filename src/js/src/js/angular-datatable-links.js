@@ -7,14 +7,12 @@
                 restrict: 'A',
                 scope: {ngTrLink: '='},
                 link: function ($scope, element, attrs) {
-                    element.mousedown($scope.rowClick);
-                },
-                controller: function ($scope, $element, $session) {
-                    $scope.rowClick = function () {
-                        if (!$(event.target).closest('td.unclickable').length) {
-                            top.location.href = /^\//.test($scope.ngTrLink) ? $scope.ngTrLink : $session.request.uri.replace(/\/$/, '') + '/' + $scope.ngTrLink;
+                    element.find("td").each(function () {
+                        var e = angular.element(this);
+                        if (!e.find('a').length) {
+                            e.wrapInner('<a href="' + $scope.ngTrLink + '"></a>');
                         }
-                    };
+                    });
                 }
             };
         }]);
