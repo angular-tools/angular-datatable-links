@@ -1,0 +1,21 @@
+{
+  "name": "angular-datatable-links",
+    "authors": [
+    "minutephp <dev@minutephp.com>"
+  ],
+  "description": "AngularJS common extensions for datatables",
+  "main": "src/js/angular-datatable-links.js",
+  "keywords": [
+    "angularjs",
+    "notice"
+  ],
+  "license": "MIT",
+  "homepage": "http://www.minutephp.com",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
